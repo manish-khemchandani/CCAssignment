@@ -41,7 +41,7 @@ public class Solution08 {
         return scanner.nextLine();
     }
 
-    public static int[][] generateRandomIntArray(int rowSize, int columnSize) {
+    private static int[][] generateRandomIntArray(int rowSize, int columnSize) {
         boolean wasZeroInserted = false;
         int[][] matrix = new int[rowSize][columnSize];
         Random RNG = new Random();

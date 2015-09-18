@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 
 // Write a program to rotate an array by 90 degrees clockwise.
@@ -25,6 +26,17 @@ public class Solution07 {
         return scanner.nextLine();
     }
 
+    private static int[][] generateRandomIntArray(int rowSize, int columnSize) {
+        int[][] matrix = new int[rowSize][columnSize];
+        Random RNG = new Random();
+        for(int rowCounter = 0; rowCounter < matrix.length; rowCounter++) {
+            for(int columnCounter = 0; columnCounter < matrix[0].length; columnCounter++) {
+                matrix[rowCounter][columnCounter] = RNG.nextInt(rowSize * columnSize);
+            }
+        }
+        return matrix;
+    }
+
     private static void printArrayToConsole(int[][] matrix) {
         int arrayDimension = matrix.length;
         for(int rowCounter = 0; rowCounter < arrayDimension; rowCounter++) {
@@ -38,13 +50,7 @@ public class Solution07 {
 
     public static void main(String[] args) {
         int arrayDimension = Integer.parseInt(readLineFromConsole("Enter the array size: "));
-        int[][] array = new int[arrayDimension][arrayDimension];
-        int counter = 0;
-        for(int rowCounter = 0; rowCounter < arrayDimension; rowCounter++) {
-            for(int columnCounter = 0; columnCounter < arrayDimension; columnCounter++) {
-                array[rowCounter][columnCounter] = counter++;
-            }
-        }
+        int[][] array = generateRandomIntArray(arrayDimension, arrayDimension);
         printArrayToConsole(array);
         rotateArray(array);
         printArrayToConsole(array);
