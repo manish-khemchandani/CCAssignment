@@ -1,9 +1,6 @@
 package chapter4;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Set;
-import java.util.TreeSet;
+import java.util.*;
 
 public class DirectedGraph {
     public Map<String, Vertex> vertices;
@@ -68,6 +65,10 @@ public class DirectedGraph {
             return null;
         }
         return neighbours.get(vertex);
+    }
+
+    public Set<Vertex> getVertices() {
+        return new HashSet<>(vertices.values());
     }
 
     public String toString() {
