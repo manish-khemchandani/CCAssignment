@@ -1,6 +1,9 @@
 package chapter3;
 
 public class Solution02 {
+    // In this approach, we maintain a separate stack which conatins the minimum elements below that point.
+    // Whenever we add an element which is less or equal to the current minimum, we also add it to the minStack.
+    // Similarly, when we pop an element which is equal to the top value of the minStack, we pop the minStack.
     Stack<Integer> stack;
     Stack<Integer> minStack;
 

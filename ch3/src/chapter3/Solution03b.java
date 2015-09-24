@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Solution03b<T> {
+    // Here, we allow the user to choose a stack to pop using the popAt function. When pushing an element,
+    // the element is added to the first stack which has an empty space.
     List<FixedSizeStack<T>> setOfStacks;
     int currentStackPosition;
     int lastStackPosition;

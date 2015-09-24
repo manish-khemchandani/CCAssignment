@@ -1,6 +1,7 @@
 package chapter3;
 
 public class Solution01 {
+    // In this approach, we divide the entire array space into 3 equal chunks which are used as 3 separate arrays.
     private final int NUMBER_OF_STACKS = 3;
     private int capacityPerStack;
     private int[] stackValues;

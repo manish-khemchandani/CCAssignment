@@ -4,6 +4,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Solution03a<T> {
+    // Here, we cannot choose to pop from a stack; only the stack to which the last element was added is popped.
+    // When we add an element and the current stack is already full, we add another stack. When we pop an element
+    // from a stack leading to the stack being empty, we remove a stack if there is already an empty stack. In other
+    // words, when popping elements, we maintain one extra empty stack. This is done to improve performance.
     List<FixedSizeStack<T>> setOfStacks;
     int currentStackPosition;
     int emptyStackPosition;

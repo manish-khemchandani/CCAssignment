@@ -1,6 +1,8 @@
 package chapter3;
 
 public class Solution04<T> {
+    // We maintain a queue using two stacks. The newestFirstStack is used when enqueuing an element.
+    // The oldestFirstStack is used when dequeuing an element.
     Stack<T> newestFirstStack;
     Stack<T> oldestFirstStack;
 
