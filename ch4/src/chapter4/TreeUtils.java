@@ -40,7 +40,7 @@ public class TreeUtils {
         int numberOfElements = (int) Math.pow(2, treeHeight) - 1;
         int[] integers = ArrayUtils.generateRandomIntArray(numberOfElements);
         Arrays.sort(integers);
-        return Solution03.createBSTFromArray(integers);
+        return Solution02.createBSTFromArray(integers);
     }
 
 //    public static Node<Integer> generateBinaryTreeWithParentLinks(int treeHeight, boolean shouldTreeBeBalanced) {
