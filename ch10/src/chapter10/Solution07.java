@@ -37,6 +37,7 @@ public class Solution07 {
 
     public static void main(String[] args) {
         try {
+            // The file "numbers.txt" lies at the root of CCAssignment.
             System.out.println("The first missing integer is: " + findMissingInteger("numbers.txt"));
         } catch(FileNotFoundException e) {
             e.printStackTrace();
