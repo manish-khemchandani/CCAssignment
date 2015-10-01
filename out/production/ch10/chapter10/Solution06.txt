@@ -1,0 +1,8 @@
+Imagine you have a 20 GB file with one string per line. Explain bow you would sort
+the file.
+
+Since the file is so huge, we will be unable to bring the entire data into memory.
+As a result, none of the in-place sorting algorithms will work. The solution is to
+bring only parts, or chunks, of the file into the memory at a time. Each chunk should
+be sorted and saved to the memory. Then, we bring the sorted chunks back into the memory
+and sort them one-by-one.
