@@ -31,6 +31,34 @@ public class Solution04 {
         return number;
     }
 
+    public static int getPreviousNumber(int number) {
+        int numberLength = 32;
+        int startOf0Block = -1;
+        int endOf0Block;
+        for(int bitIndex = 0; bitIndex < numberLength; bitIndex++) {
+            if(!isBitSet(number, bitIndex)) {
+                if(startOf0Block == -1) {
+                    startOf0Block = bitIndex;
+                }
+            } else {
+                if(startOf0Block != -1) {
+                    endOf0Block = bitIndex - 1;
+                    number = resetBit(number, bitIndex);
+                    int bitsToSetTo1 = endOf0Block - startOf0Block;
+                    for(bitIndex = 0; bitIndex < bitsToSetTo1; bitIndex++) {
+                        number = resetBit(number, bitIndex);
+                    }
+                    while(bitIndex <= endOf0Block) {
+                        number = setBit(number, bitIndex);
+                        bitIndex++;
+                    }
+                    break;
+                }
+            }
+        }
+        return number;
+    }
+
     private static boolean isBitSet(int number, int bitIndex) {
         int mask = 1 << bitIndex;
         return (number & mask) != 0;
@@ -51,5 +79,7 @@ public class Solution04 {
         System.out.println("Given number is " + Integer.toBinaryString(number));
         int nextNumber = getNextNumber(number);
         System.out.println("Next number is " + Integer.toBinaryString(nextNumber));
+        int previousNumber = getPreviousNumber(number);
+        System.out.println("Previous number is " + Integer.toBinaryString(previousNumber));
     }
 }
